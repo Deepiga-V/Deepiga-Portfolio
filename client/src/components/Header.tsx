@@ -15,7 +15,9 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
-  const toggleMenu = () => {
+  // Completely separate the mobile menu toggle from dark mode toggle
+  const toggleMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation(); // Prevent event bubbling
     setIsMenuOpen(prev => !prev);
   };
 
@@ -82,6 +84,8 @@ export default function Header() {
             onClick={toggleMenu}
             className="md:hidden p-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors duration-300" 
             aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             <i className={cn("fas", isMenuOpen ? "fa-times" : "fa-bars", "text-xl")}></i>
           </button>
@@ -89,11 +93,14 @@ export default function Header() {
       </div>
       
       {/* Mobile Navigation */}
-      <div className={cn(
-        "md:hidden bg-white dark:bg-gray-900 shadow-md absolute left-0 right-0 transition-all duration-300 ease-in-out",
-        isMenuOpen ? "transform translate-y-0 opacity-100" : "transform -translate-y-full opacity-0"
-      )}>
-        <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+      <div 
+        id="mobile-menu"
+        className={cn(
+          "md:hidden bg-white dark:bg-gray-900 shadow-md absolute left-0 right-0 transition-all duration-300 ease-in-out",
+          isMenuOpen ? "transform translate-y-0 opacity-100" : "transform -translate-y-full opacity-0"
+        )}
+      >
+        <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
           {navLinks.map(({ href, label }) => (
             <a 
               key={href}
@@ -107,17 +114,20 @@ export default function Header() {
               {label}
             </a>
           ))}
-          <div className="flex justify-between items-center py-2">
+          <div className="flex justify-between items-center py-2 mt-2 border-t border-gray-200 dark:border-gray-700">
             <span className="text-gray-700 dark:text-gray-300">Dark Mode</span>
             <button 
-              onClick={toggleDarkMode}
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleDarkMode();
+              }}
               className="p-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300" 
               aria-label="Toggle dark mode"
             >
               <i className={cn("fas", isDarkMode ? "fa-sun" : "fa-moon")}></i>
             </button>
           </div>
-        </div>
+        </nav>
       </div>
     </header>
   );

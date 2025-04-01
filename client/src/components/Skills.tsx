@@ -6,23 +6,23 @@ interface Skill {
 }
 
 const methods: Skill[] = [
-  { name: 'User Research', percentage: 90 },
-  { name: 'Wireframing', percentage: 85 },
+  { name: 'User Research', percentage: 75 },
+  { name: 'Wireframing', percentage: 90 },
   { name: 'Prototyping', percentage: 95 },
   { name: 'Design System', percentage: 85 }
 ];
 
 const tools: Skill[] = [
-  { name: 'Figma', percentage: 85 },
-  { name: 'Illustrator', percentage: 80 },
-  { name: 'Photoshop', percentage: 75 },
-  { name: 'Canva', percentage: 70 }
+  { name: 'Figma', percentage: 90 },
+  { name: 'Illustrator', percentage: 85 },
+  { name: 'Photoshop', percentage: 85 },
+  { name: 'Canva', percentage: 95 }
 ];
 
 const technicals: Skill[] = [
-  { name: 'HTML', percentage: 90 },
-  { name: 'CSS', percentage: 75 },
-  { name: 'JavaScript', percentage: 80 },
+  { name: 'HTML', percentage: 80 },
+  { name: 'CSS', percentage: 80 },
+  { name: 'JavaScript', percentage: 30 },
 ];
 
 function SkillBar({ skill, delay }: { skill: Skill, delay: number }) {
@@ -87,7 +87,7 @@ export default function Skills() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <SkillSection title="Methods" icon="fas fa-bezier-curve" skills={methods} />
+          <SkillSection title="Methods" icon="fas fa-" skills={methods} />
           <SkillSection title="Tools" icon="fas fa-tools" skills={tools} />
           <SkillSection title="Technicals" icon="fas fa-code" skills={technicals} />
         </div>

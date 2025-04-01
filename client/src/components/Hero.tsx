@@ -24,8 +24,7 @@ export default function Hero() {
               <span className="typing-text">{typedText}</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">
-              I build exceptional digital experiences with a focus on performance, 
-              accessibility, and cutting-edge technologies.
+              A designer fueled by curiosity and creativity, crafting digital experiences that are as intuitive as they are visually captivating. With a tech-savvy foundation in computer science, constantly exploring new horizons and merge innovation with elegance in every design I create.
             </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <button

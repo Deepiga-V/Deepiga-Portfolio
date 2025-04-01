@@ -23,7 +23,7 @@ export default function About() {
             ref={imageRef}
             className={`relative flex justify-center transition-all duration-700 transform ${isImageVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
-                <div className="relative w-64 h-64 sm:w-80 sm:h-80">
+                <div className="relative w-74 h-74 sm:w-80 sm:h-80">
                   {/* Background blob shape with animation */}
                   <div className="absolute bg-primary bg-opacity-20 dark:bg-blue-500 dark:bg-opacity-20 animate-pulse" 
                       style={{
@@ -51,7 +51,7 @@ export default function About() {
                     }}
                   >
                 <img 
-                  src="/images/DV logo (2).png" 
+                  src="/images/DV website logo.png" 
                   alt="DV Logo" 
                   className="w-4/5 h-4/5 object-contain"
                 />

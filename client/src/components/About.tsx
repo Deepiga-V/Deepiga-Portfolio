@@ -117,7 +117,7 @@ export default function About() {
                 <a 
                   href="mailto:email@deepigavelmurugan.com" 
                   rel="noopener noreferrer" 
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-teal-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   <i className="fas fa-envelope text-lg"></i>
                 </a>

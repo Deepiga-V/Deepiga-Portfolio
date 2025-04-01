@@ -18,7 +18,7 @@ export default function Hero() {
             className={`order-2 md:order-1 text-center md:text-left transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-              Hi, I'm <span className="text-primary dark:text-blue-400">Deepiga</span>
+              Hi, I'm <span className="text-primary dark:text-teal-500">Deepiga</span>
             </h1>
             <h2 className="text-2xl sm:text-3xl text-gray-600 dark:text-gray-300 mb-6">
               <span className="typing-text">{typedText}</span>

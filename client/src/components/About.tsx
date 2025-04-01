@@ -22,12 +22,33 @@ export default function About() {
             ref={imageRef}
             className={`relative flex justify-center transition-all duration-700 transform ${isImageVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
-            <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-700 flex items-center justify-center p-6">
-              <img 
-                src="/images/DV logo (2).png" 
-                alt="DV Logo" 
-                className="max-w-full max-h-full object-contain"
-              />
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64">
+              {/* Background blob shape with animation */}
+              <div 
+                className="absolute inset-0 bg-primary bg-opacity-20 dark:bg-blue-500 dark:bg-opacity-20 animate-pulse" 
+                style={{
+                  borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%',
+                  animation: 'morph 8s ease-in-out infinite',
+                  animationDelay: '0.5s',
+                  transform: 'rotate(-5deg)'
+                }}
+              >
+              </div>
+              
+              {/* Logo container with blob shape */}
+              <div 
+                className="absolute inset-2 shadow-lg overflow-hidden bg-white dark:bg-gray-700 flex items-center justify-center p-6" 
+                style={{
+                  borderRadius: '45% 55% 65% 35% / 55% 45% 35% 65%',
+                  transform: 'rotate(2deg)'
+                }}
+              >
+                <img 
+                  src="/images/DV logo (2).png" 
+                  alt="DV Logo" 
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
             </div>
           </div>
           

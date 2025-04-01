@@ -97,9 +97,8 @@ export default function Hero() {
               
               {/* Image container with hexagon-like shape */}
               <div 
-                className="absolute inset-4 ring-4 ring-white dark:ring-gray-800 shadow-xl overflow-hidden" 
+                className="absolute inset-4 ring-4 ring-white dark:ring-gray-800 shadow-xl overflow-hidden rounded-md" 
                 style={{
-                  aspectRatio: '1 / 1',
                   width: 'calc(100% - 32px)',
                   height: 'calc(100% - 32px)'
                 }}

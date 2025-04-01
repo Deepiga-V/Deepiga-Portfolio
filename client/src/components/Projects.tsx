@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
-type ProjectCategory = 'All' | 'Web App' | 'Mobile' | 'UI/UX';
+type ProjectCategory = 'All' | 'App Designs' | 'Web Designs' | 'Front-End Designs' | 'Social Media Designs';
 
 interface Project {
   id: number;
@@ -18,40 +18,87 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'E-commerce Platform',
+    title: 'Washie - Laundry Service App',
     description: 'A full-featured online shopping platform with payment processing, user accounts, and inventory management.',
-    category: 'Web App',
-    technologies: ['React', 'Node.js', 'Redux', 'MongoDB'],
+    category: 'App Designs',
+    technologies: ['Figma'],
     links: {
-      github: 'https://github.com',
-      live: 'https://example.com'
+      live: 'https://www.behance.net/gallery/208991777/Washie-Laundry-Service-App'
     }
   },
   {
     id: 2,
-    title: 'Fitness Tracker App',
+    title: 'Plantora - Plant Shopping App',
     description: 'A mobile app for tracking workouts, nutrition, and fitness goals with customizable plans and analytics.',
-    category: 'Mobile',
-    technologies: ['React Native', 'Firebase', 'TypeScript'],
+    category: 'App Designs',
+    technologies: ['Figma'],
     links: {
-      github: 'https://github.com',
-      live: 'https://example.com'
+      live: 'https://www.behance.net/gallery/214990791/Plantora-Plant-Shopping-App'
     }
   },
   {
     id: 3,
-    title: 'Dashboard Redesign',
+    title: 'Soul - Music Website',
     description: 'A complete UI/UX overhaul for a complex analytics dashboard, focusing on usability and data visualization.',
-    category: 'UI/UX',
-    technologies: ['Figma', 'Sketch', 'D3.js'],
+    category: 'Web Designs',
+    technologies: ['Figma'],
     links: {
-      github: 'https://github.com',
-      live: 'https://example.com'
+      live: 'https://www.behance.net/gallery/213455621/Soul-Music-Website'
+    }
+  },
+  {
+    id: 4,
+    title: 'Furnique - Furniture Website',
+    description: 'A complete UI/UX overhaul for a complex analytics dashboard, focusing on usability and data visualization.',
+    category: 'Web Designs',
+    technologies: ['Figma'],
+    links: {
+      live: 'https://www.behance.net/gallery/214210633/Furnique-Furniture-Website'
+    }
+  },
+  {
+    id: 5,
+    title: 'Petal Palette - Flower Shop Website',
+    description: 'A complete UI/UX overhaul for a complex analytics dashboard, focusing on usability and data visualization.',
+    category: 'Front-End Designs',
+    technologies: ['HTML','CSS'],
+    links: {
+      live: 'https://deepiga-v.github.io/Petal-Palette/'
+    }
+  },
+  {
+    id: 6,
+    title: 'Café Aura - Coffee Shop Website',
+    description: 'A complete UI/UX overhaul for a complex analytics dashboard, focusing on usability and data visualization.',
+    category: 'Front-End Designs',
+    technologies: ['HTML','CSS','JavaScript'],
+    links: {
+      live: 'https://deepiga-v.github.io/Cafe-Aura/'
+    }
+  },
+  {
+    id: 7,
+    title: 'Instagram Post Designs',
+    description: 'A complete UI/UX overhaul for a complex analytics dashboard, focusing on usability and data visualization.',
+    category: 'Social Media Designs',
+    technologies: ['Canva','Illustrator','Photoshop'],
+    links: {
+      live: 'https://www.fiverr.com/s/XLarR9Z'
+    }
+  },
+  {
+    id: 8,
+    title: 'Instagram Story Designs',
+    description: 'A complete UI/UX overhaul for a complex analytics dashboard, focusing on usability and data visualization.',
+    category: 'Social Media Designs',
+    technologies: ['Canva','Illustrator','Photoshop'],
+    links: {
+      live: 'https://www.fiverr.com/s/XLarR9Z'
     }
   }
 ];
 
-const categories: ProjectCategory[] = ['All', 'Web App', 'Mobile', 'UI/UX'];
+const categories: ProjectCategory[] = ['All', 'App Designs', 'Web Designs', 'Front-End Designs', 'Social Media Designs'];
 
 function ProjectCard({ project, index }: { project: Project, index: number }) {
   const [ref, isVisible] = useIntersectionObserver<HTMLDivElement>();
@@ -93,12 +140,12 @@ function ProjectCard({ project, index }: { project: Project, index: number }) {
               
               switch (tech.toLowerCase()) {
                 case 'react':
-                case 'react native':
+                case 'canva':
                   bgClass = 'bg-blue-100 dark:bg-blue-900';
                   textClass = 'text-blue-600 dark:text-blue-300';
                   break;
                 case 'node.js':
-                case 'firebase':
+                case 'css':
                   bgClass = 'bg-green-100 dark:bg-green-900';
                   textClass = 'text-green-600 dark:text-green-300';
                   break;
@@ -108,21 +155,21 @@ function ProjectCard({ project, index }: { project: Project, index: number }) {
                   textClass = 'text-purple-600 dark:text-purple-300';
                   break;
                 case 'mongodb':
-                case 'typescript':
+                case 'illustrator':
                   bgClass = 'bg-yellow-100 dark:bg-yellow-900';
                   textClass = 'text-yellow-600 dark:text-yellow-300';
                   break;
-                case 'sketch':
+                case 'html':
                   bgClass = 'bg-pink-100 dark:bg-pink-900';
                   textClass = 'text-pink-600 dark:text-pink-300';
                   break;
-                case 'd3.js':
+                case 'javascript':
                   bgClass = 'bg-indigo-100 dark:bg-indigo-900';
                   textClass = 'text-indigo-600 dark:text-indigo-300';
                   break;
                 default:
-                  bgClass = 'bg-gray-100 dark:bg-gray-800';
-                  textClass = 'text-gray-600 dark:text-gray-300';
+                  bgClass = 'bg-gray-100 dark:bg-teal-800';
+                  textClass = 'text-gray-600 dark:text-teal-300';
               }
               
               return (

@@ -88,8 +88,12 @@ export default function Hero() {
           >
             <div className="relative w-64 h-64 sm:w-80 sm:h-80">
               {/* Background blob shape with animation */}
-              <div className="absolute inset-0 bg-primary bg-opacity-20 dark:bg-blue-500 dark:bg-opacity-20 animate-pulse" 
+              <div className="absolute bg-primary bg-opacity-20 dark:bg-blue-500 dark:bg-opacity-20 animate-pulse" 
                   style={{
+                    top: '-10%',
+                    left: '-10%',
+                    right: '-10%',
+                    bottom: '-10%',
                     borderRadius: '60% 40% 70% 30% / 60% 30% 70% 40%',
                     animation: 'morph 8s ease-in-out infinite'
                   }}>
@@ -97,10 +101,15 @@ export default function Hero() {
               
               {/* Image container with hexagon-like shape */}
               <div 
-                className="absolute inset-4 ring-4 ring-white dark:ring-gray-800 shadow-xl overflow-hidden rounded-md" 
+                className="absolute rounded-md overflow-hidden" 
                 style={{
-                  width: 'calc(100% - 32px)',
-                  height: 'calc(100% - 32px)'
+                  top: '1rem',
+                  right: '1rem',
+                  bottom: '1rem',
+                  left: '1rem',
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                  border: '4px solid',
+                  borderColor: 'white',
                 }}
               >
                 <img 

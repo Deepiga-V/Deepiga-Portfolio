@@ -100,7 +100,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium text-gray-800 dark:text-gray-100 mb-1">Location</h4>
-                  <p className="text-gray-600 dark:text-gray-300">San Francisco, California</p>
+                  <p className="text-gray-600 dark:text-gray-300">Virudhunagar, Tamilnadu</p>
                 </div>
               </div>
               
@@ -110,7 +110,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium text-gray-800 dark:text-gray-100 mb-1">Email</h4>
-                  <a href="mailto:john@example.com" className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors duration-300">john@example.com</a>
+                  <a href="mailto:deepigavelmurugan@gmail.com" className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors duration-300">deepigavelmurugan@gmaial.com</a>
                 </div>
               </div>
               
@@ -120,7 +120,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium text-gray-800 dark:text-gray-100 mb-1">Phone</h4>
-                  <a href="tel:+1234567890" className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors duration-300">(123) 456-7890</a>
+                  <a href="tel:7845718810" className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors duration-300">7845718810</a>
                 </div>
               </div>
             </div>

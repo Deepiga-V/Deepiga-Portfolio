@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { cn, scrollToSection } from '@/lib/utils';
 import { useDarkMode } from '@/hooks/use-dark-mode';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 
 const navLinks = [
   { href: 'home', label: 'Home' },
@@ -17,8 +18,14 @@ export default function Header() {
 
   // Completely separate the mobile menu toggle from dark mode toggle
   const toggleMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault(); // Prevent default behavior
     e.stopPropagation(); // Prevent event bubbling
-    setIsMenuOpen(prev => !prev);
+    console.log('Toggle menu clicked'); // Debug log
+    setIsMenuOpen(prevState => {
+      const newState = !prevState;
+      console.log('Menu state changing to:', newState); // Debug log
+      return newState;
+    });
   };
 
   const handleNavClick = (id: string) => {
@@ -71,11 +78,17 @@ export default function Header() {
               </a>
             ))}
             <button 
-              onClick={toggleDarkMode} 
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Dark mode toggle clicked (desktop)');
+                toggleDarkMode();
+              }} 
               className="p-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300" 
               aria-label="Toggle dark mode"
+              data-testid="dark-mode-toggle-desktop"
             >
-              <i className={cn("fas", isDarkMode ? "fa-sun" : "fa-moon")}></i>
+              {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
           </nav>
           
@@ -86,8 +99,9 @@ export default function Header() {
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
+            data-testid="mobile-menu-button"
           >
-            <i className={cn("fas", isMenuOpen ? "fa-times" : "fa-bars", "text-xl")}></i>
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
@@ -118,13 +132,16 @@ export default function Header() {
             <span className="text-gray-700 dark:text-gray-300">Dark Mode</span>
             <button 
               onClick={(e) => {
+                e.preventDefault();
                 e.stopPropagation();
+                console.log('Dark mode toggle clicked (mobile)');
                 toggleDarkMode();
               }}
               className="p-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300" 
               aria-label="Toggle dark mode"
+              data-testid="dark-mode-toggle-mobile"
             >
-              <i className={cn("fas", isDarkMode ? "fa-sun" : "fa-moon")}></i>
+              {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
           </div>
         </nav>

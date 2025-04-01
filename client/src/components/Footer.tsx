@@ -26,7 +26,7 @@ export default function Footer() {
               <i className="fab fa-dribbble text-xl"></i>
             </a>
             <a href="mailto:email@deepigavelmurugan.com" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-blue-400 transition-colors duration-300">
-              <i className="fab fa-envelope text-xl"></i>
+              <i className="fas fa-envelope text-xl"></i>
             </a>
           </div>
           

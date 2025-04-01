@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
+import { ExternalLink, Github } from 'lucide-react';
 
 type ProjectCategory = 'All' | 'App Designs' | 'Web Designs' | 'Front-End Designs' | 'Social Media Designs';
 
 interface Project {
   id: number;
   title: string;
-  description: string;
   category: ProjectCategory;
+  imagePath: string;
   technologies: string[];
   links: {
     live?: string;
@@ -19,8 +20,8 @@ const projects: Project[] = [
   {
     id: 1,
     title: 'Washie - Laundry Service App',
-    description: 'A full-featured online shopping platform with payment processing, user accounts, and inventory management.',
     category: 'App Designs',
+    imagePath: '/images/app-design.svg',
     technologies: ['Figma'],
     links: {
       live: 'https://www.behance.net/gallery/208991777/Washie-Laundry-Service-App'
@@ -29,8 +30,8 @@ const projects: Project[] = [
   {
     id: 2,
     title: 'Plantora - Plant Shopping App',
-    description: 'A mobile app for tracking workouts, nutrition, and fitness goals with customizable plans and analytics.',
     category: 'App Designs',
+    imagePath: '/images/app-design.svg',
     technologies: ['Figma'],
     links: {
       live: 'https://www.behance.net/gallery/214990791/Plantora-Plant-Shopping-App'
@@ -39,8 +40,8 @@ const projects: Project[] = [
   {
     id: 3,
     title: 'Soul - Music Website',
-    description: 'A complete UI/UX overhaul for a complex analytics dashboard, focusing on usability and data visualization.',
     category: 'Web Designs',
+    imagePath: '/images/web-design.svg',
     technologies: ['Figma'],
     links: {
       live: 'https://www.behance.net/gallery/213455621/Soul-Music-Website'
@@ -49,8 +50,8 @@ const projects: Project[] = [
   {
     id: 4,
     title: 'Furnique - Furniture Website',
-    description: 'A complete UI/UX overhaul for a complex analytics dashboard, focusing on usability and data visualization.',
     category: 'Web Designs',
+    imagePath: '/images/web-design.svg',
     technologies: ['Figma'],
     links: {
       live: 'https://www.behance.net/gallery/214210633/Furnique-Furniture-Website'
@@ -59,8 +60,8 @@ const projects: Project[] = [
   {
     id: 5,
     title: 'Petal Palette - Flower Shop Website',
-    description: 'A complete UI/UX overhaul for a complex analytics dashboard, focusing on usability and data visualization.',
     category: 'Front-End Designs',
+    imagePath: '/images/frontend-design.svg',
     technologies: ['HTML','CSS'],
     links: {
       live: 'https://deepiga-v.github.io/Petal-Palette/'
@@ -69,8 +70,8 @@ const projects: Project[] = [
   {
     id: 6,
     title: 'Café Aura - Coffee Shop Website',
-    description: 'A complete UI/UX overhaul for a complex analytics dashboard, focusing on usability and data visualization.',
     category: 'Front-End Designs',
+    imagePath: '/images/frontend-design.svg',
     technologies: ['HTML','CSS','JavaScript'],
     links: {
       live: 'https://deepiga-v.github.io/Cafe-Aura/'
@@ -79,8 +80,8 @@ const projects: Project[] = [
   {
     id: 7,
     title: 'Instagram Post Designs',
-    description: 'A complete UI/UX overhaul for a complex analytics dashboard, focusing on usability and data visualization.',
     category: 'Social Media Designs',
+    imagePath: '/images/social-media-design.svg',
     technologies: ['Canva','Illustrator','Photoshop'],
     links: {
       live: 'https://www.fiverr.com/s/XLarR9Z'
@@ -89,8 +90,8 @@ const projects: Project[] = [
   {
     id: 8,
     title: 'Instagram Story Designs',
-    description: 'A complete UI/UX overhaul for a complex analytics dashboard, focusing on usability and data visualization.',
     category: 'Social Media Designs',
+    imagePath: '/images/social-media-design.svg',
     technologies: ['Canva','Illustrator','Photoshop'],
     links: {
       live: 'https://www.fiverr.com/s/XLarR9Z'
@@ -112,19 +113,21 @@ function ProjectCard({ project, index }: { project: Project, index: number }) {
     >
       <div className="bg-gray-50 dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
         <div className="project-image h-56 overflow-hidden relative">
-          <div className="w-full h-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
-            <i className="fas fa-laptop text-4xl text-gray-500 dark:text-gray-400"></i>
-          </div>
+          <img 
+            src={project.imagePath} 
+            alt={project.title}
+            className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
+          />
           <div className="absolute inset-0 bg-primary bg-opacity-70 dark:bg-blue-500 dark:bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
             <div className="flex space-x-4">
               {project.links.live && (
                 <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-100 p-2 rounded-full bg-black bg-opacity-30 transition-colors duration-300">
-                  <i className="fas fa-link"></i>
+                  <ExternalLink className="w-5 h-5" />
                 </a>
               )}
               {project.links.github && (
                 <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-100 p-2 rounded-full bg-black bg-opacity-30 transition-colors duration-300">
-                  <i className="fab fa-github"></i>
+                  <Github className="w-5 h-5" />
                 </a>
               )}
             </div>
@@ -132,7 +135,6 @@ function ProjectCard({ project, index }: { project: Project, index: number }) {
         </div>
         <div className="p-6">
           <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">{project.title}</h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
           <div className="flex flex-wrap gap-2 mb-4">
             {project.technologies.map((tech) => {
               let bgClass = '';
@@ -237,15 +239,7 @@ export default function Projects() {
           ref={buttonRef}
           className={`text-center mt-12 transition-all duration-700 transform ${isButtonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
-          <a 
-            href="https://github.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-primary hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 text-gray-700 dark:text-gray-300 font-medium rounded-md transition-colors duration-300"
-          >
-            <span>View All Projects</span>
-            <i className="fas fa-arrow-right ml-2"></i>
-          </a>
+          
         </div>
       </div>
     </section>

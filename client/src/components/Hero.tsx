@@ -101,7 +101,7 @@ export default function Hero() {
               
               {/* Image container with hexagon-like shape */}
               <div 
-                className="absolute rounded-md overflow-hidden" 
+                className="absolute rounded-md overflow-hidden flex items-center justify-center" 
                 style={{
                   top: '1rem',
                   right: '1rem',
@@ -110,6 +110,7 @@ export default function Hero() {
                   boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
                   border: '4px solid',
                   borderColor: 'white',
+                  backgroundColor: 'white',
                 }}
               >
                 <img 

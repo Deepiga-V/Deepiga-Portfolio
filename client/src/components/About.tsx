@@ -38,7 +38,7 @@ export default function About() {
 
                   {/* Image container with hexagon-like shape */}
                   <div 
-                    className="absolute rounded-md overflow-hidden" 
+                    className="absolute rounded-md overflow-hidden flex items-center justify-center" 
                     style={{
                       top: '1rem',
                       right: '1rem',
@@ -47,12 +47,13 @@ export default function About() {
                       boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
                       border: '4px solid',
                       borderColor: 'white',
+                      backgroundColor: 'white',
                     }}
                   >
                 <img 
                   src="/images/DV logo (2).png" 
                   alt="DV Logo" 
-                  className="max-w-full max-h-full object-contain"
+                  className="w-4/5 h-4/5 object-contain"
                 />
               </div>
             </div>

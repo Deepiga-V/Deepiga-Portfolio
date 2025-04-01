@@ -12,10 +12,10 @@ export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-items-center">
           <div 
             ref={containerRef}
-            className={`order-2 md:order-1 transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+            className={`order-2 md:order-1 text-center md:text-left transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
               Hi, I'm <span className="text-primary dark:text-blue-400">Deepiga</span>
@@ -23,11 +23,11 @@ export default function Hero() {
             <h2 className="text-2xl sm:text-3xl text-gray-600 dark:text-gray-300 mb-6">
               <span className="typing-text">{typedText}</span>
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">
               I build exceptional digital experiences with a focus on performance, 
               accessibility, and cutting-edge technologies.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <button
                 onClick={() => scrollToSection('projects')}
                 className="px-6 py-3 bg-primary hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-300 shadow-md hover:shadow-lg"
@@ -41,7 +41,7 @@ export default function Hero() {
                 Contact Me
               </button>
             </div>
-            <div className="flex space-x-4 mt-8">
+            <div className="flex space-x-4 mt-8 justify-center md:justify-start">
                 <a href="https://www.linkedin.com/in/deepiga-v-05a25524b" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-blue-400 transition-colors duration-300">
                   <i className="fab fa-linkedin text-2xl"></i>
               </a>

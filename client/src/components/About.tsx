@@ -46,24 +46,6 @@ export default function About() {
               technologies. I believe in writing clean, maintainable code and staying up-to-date with 
               industry best practices.
             </p>
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div>
-                <h4 className="font-bold text-gray-800 dark:text-gray-100 mb-2">Name:</h4>
-                <p className="text-gray-600 dark:text-gray-300">John Doe</p>
-              </div>
-              <div>
-                <h4 className="font-bold text-gray-800 dark:text-gray-100 mb-2">Email:</h4>
-                <p className="text-gray-600 dark:text-gray-300">john@example.com</p>
-              </div>
-              <div>
-                <h4 className="font-bold text-gray-800 dark:text-gray-100 mb-2">Location:</h4>
-                <p className="text-gray-600 dark:text-gray-300">San Francisco, CA</p>
-              </div>
-              <div>
-                <h4 className="font-bold text-gray-800 dark:text-gray-100 mb-2">Availability:</h4>
-                <p className="text-gray-600 dark:text-gray-300">Open to opportunities</p>
-              </div>
-            </div>
             <button
               onClick={() => scrollToSection('resume')}
               className="inline-flex items-center px-6 py-3 bg-primary hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-300 shadow-md hover:shadow-lg"

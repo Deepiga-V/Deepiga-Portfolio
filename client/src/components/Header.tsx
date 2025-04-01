@@ -58,8 +58,7 @@ export default function Header() {
               handleNavClick('home');
             }}
           >
-            <span className="text-2xl">JD</span>
-            <span className="hidden sm:inline">John Doe</span>
+            <span className="text-2xl">DEEPIGA</span>
           </a>
           
           {/* Desktop Navigation */}

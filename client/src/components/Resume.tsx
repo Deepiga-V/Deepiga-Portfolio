@@ -1,10 +1,15 @@
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
+// Type guard function to check if an item is a CertificateItem
+function isCertificateItem(item: any): item is CertificateItem {
+  return 'issuer' in item && 'year' in item;
+}
+
 interface TimelineItem {
   title: string;
   period: string;
   organization: string;
-  description: string;
+  percentage: string;
 }
 
 interface CertificateItem {
@@ -20,70 +25,63 @@ interface LanguageItem {
 
 const educationItems: TimelineItem[] = [
   {
-    title: 'Master of Computer Science',
-    period: '2018-2020',
-    organization: 'Stanford University',
-    description: 'Specialized in Human-Computer Interaction and Machine Learning. Thesis on "Adaptive User Interfaces for Enhanced Accessibility."'
+    title: 'B.E Computer Science and Engineering',
+    period: '2020-2024',
+    organization: 'AAA College of Engineering and Technology',
+    percentage: 'CGPA: 8.26'
   },
   {
-    title: 'Bachelor of Science in Computer Science',
-    period: '2014-2018',
-    organization: 'UC Berkeley',
-    description: 'Graduated with honors. Minor in User Experience Design. Active member of the Web Development Club and Hackathon Team.'
+    title: 'HSC',
+    period: '2019-2020',
+    organization: 'SBK Girls Higher Secondary School',
+    percentage: '77%'
+  },
+  {
+    title: 'SSLC',
+    period: '2017-2018',
+    organization: 'Kongu Vellalar Matriculation Higher Secondary School',
+    percentage: '92%'
   }
 ];
 
-const experienceItems: TimelineItem[] = [
-  {
-    title: 'Senior Software Engineer',
-    period: '2021-Present',
-    organization: 'TechCorp Inc., San Francisco',
-    description: 'Lead front-end development for enterprise SaaS products. Implemented modern React architecture and mentored junior developers. Improved application performance by 35%.'
-  },
-  {
-    title: 'Full Stack Developer',
-    period: '2018-2021',
-    organization: 'InnovateTech, Palo Alto',
-    description: 'Developed and maintained web applications using React, Node.js, and PostgreSQL. Collaborated with UX designers to implement responsive, accessible interfaces. Participated in agile development processes.'
-  }
-];
 
 const certifications: CertificateItem[] = [
   {
-    name: 'AWS Certified Solutions Architect',
-    issuer: 'Amazon Web Services',
-    year: '2022'
+    name: 'UI/UX Designing',
+    issuer: 'Tutedude',
+    year: '2024'
   },
   {
-    name: 'Professional Scrum Master I',
-    issuer: 'Scrum.org',
-    year: '2021'
+    name: 'UX Research',
+    issuer: 'Tutedude',
+    year: '2024'
   },
   {
-    name: 'Google UX Design Professional Certificate',
-    issuer: 'Google/Coursera',
-    year: '2020'
-  }
+    name: 'Illustrator',
+    issuer: 'Tutedude',
+    year: '2024'
+  },
+  {
+    name: 'Photoshop',
+    issuer: 'Tutedude',
+    year: '2024'
+  },
 ];
 
 const languages: LanguageItem[] = [
   {
-    name: 'English',
+    name: 'Tamil',
     level: 'Native'
   },
   {
-    name: 'Spanish',
+    name: 'English',
     level: 'Fluent'
   },
-  {
-    name: 'French',
-    level: 'Intermediate'
-  }
 ];
 
 function TimelineSection({ title, icon, items }: { title: string, icon: string, items: TimelineItem[] }) {
   const [ref, isVisible] = useIntersectionObserver<HTMLDivElement>();
-  
+
   return (
     <div 
       ref={ref}
@@ -93,7 +91,7 @@ function TimelineSection({ title, icon, items }: { title: string, icon: string, 
         <i className={`${icon} text-primary dark:text-blue-400 text-3xl mr-4`}></i>
         <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</h3>
       </div>
-      
+
       {items.map((item, index) => (
         <div key={index} className={`relative border-l-2 border-gray-200 dark:border-gray-700 pl-8 ${index < items.length - 1 ? 'pb-8' : ''}`}>
           <div className="absolute w-4 h-4 bg-primary dark:bg-blue-400 rounded-full -left-[9px] top-0"></div>
@@ -103,7 +101,7 @@ function TimelineSection({ title, icon, items }: { title: string, icon: string, 
               <span className="text-sm text-white bg-primary dark:bg-blue-400 px-3 py-1 rounded-full">{item.period}</span>
             </div>
             <h5 className="text-lg text-gray-600 dark:text-gray-300 mb-2">{item.organization}</h5>
-            <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
+            <p className="text-gray-600 dark:text-gray-400">{item.percentage}</p>
           </div>
         </div>
       ))}
@@ -118,7 +116,7 @@ function InfoCard({ title, items, icon, itemKey }: {
   itemKey: 'name' | 'issuer' | 'year' | 'level'; 
 }) {
   const [ref, isVisible] = useIntersectionObserver<HTMLDivElement>();
-  
+
   return (
     <div 
       ref={ref}
@@ -132,7 +130,9 @@ function InfoCard({ title, items, icon, itemKey }: {
             <div>
               <h4 className="font-medium text-gray-800 dark:text-gray-100">{item.name}</h4>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
-                {itemKey === 'issuer' ? `${item.issuer}, ${item.year}` : item[itemKey as keyof typeof item]}
+                {itemKey === 'issuer' && isCertificateItem(item)
+                  ? `${item.issuer}, ${item.year}` 
+                  : item[itemKey as keyof typeof item]}
               </p>
             </div>
           </li>
@@ -144,7 +144,7 @@ function InfoCard({ title, items, icon, itemKey }: {
 
 export default function Resume() {
   const [titleRef, isTitleVisible] = useIntersectionObserver<HTMLDivElement>();
-  
+
   return (
     <section id="resume" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -158,7 +158,7 @@ export default function Resume() {
             My professional journey and qualifications. Download the full resume for complete details.
           </p>
           <a 
-            href="/John_Doe_Resume.pdf" 
+            href="Deepigauiux-resume.pdf" 
             className="mt-6 inline-flex items-center px-6 py-3 bg-primary hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-300 shadow-md hover:shadow-lg"
             target="_blank"
             rel="noopener noreferrer"
@@ -167,7 +167,7 @@ export default function Resume() {
             <i className="fas fa-download ml-2"></i>
           </a>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <TimelineSection 
             title="Education" 
@@ -175,27 +175,21 @@ export default function Resume() {
             items={educationItems} 
           />
           
-          <TimelineSection 
-            title="Experience" 
-            icon="fas fa-briefcase" 
-            items={experienceItems} 
-          />
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-          <InfoCard 
-            title="Certifications" 
-            items={certifications} 
-            icon="fas fa-certificate" 
-            itemKey="issuer" 
-          />
-          
-          <InfoCard 
-            title="Languages" 
-            items={languages} 
-            icon="fas fa-language" 
-            itemKey="level" 
-          />
+          <div className="space-y-8">
+            <InfoCard 
+              title="Certifications" 
+              items={certifications} 
+              icon="fas fa-certificate" 
+              itemKey="issuer" 
+            />
+            
+            <InfoCard 
+              title="Languages" 
+              items={languages} 
+              icon="fas fa-language" 
+              itemKey="level" 
+            />
+          </div>
         </div>
       </div>
     </section>

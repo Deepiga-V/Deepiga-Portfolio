@@ -23,23 +23,21 @@ export default function About() {
             ref={imageRef}
             className={`relative flex justify-center transition-all duration-700 transform ${isImageVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
-            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80">
               {/* Background blob shape with animation */}
               <div 
                 className="absolute inset-0 bg-primary bg-opacity-20 dark:bg-blue-500 dark:bg-opacity-20 animate-pulse" 
                 style={{
                   borderRadius: '60% 40% 70% 30% / 60% 30% 70% 40%',
-                  animation: 'morph 8s ease-in-out infinite',
-                  animationDelay: '0.5s'
+                  animation: 'morph 8s ease-in-out infinite'
                 }}
               >
               </div>
               
               {/* Logo container with blob shape */}
               <div 
-                className="absolute inset-4 shadow-lg overflow-hidden bg-white dark:bg-gray-800 flex items-center justify-center p-6" 
+                className="absolute inset-4 ring-4 ring-white dark:ring-gray-800 shadow-xl overflow-hidden bg-white dark:bg-gray-800 flex items-center justify-center p-6 rounded-md" 
                 style={{
-                  aspectRatio: '1 / 1',
                   width: 'calc(100% - 32px)',
                   height: 'calc(100% - 32px)'
                 }}
@@ -66,7 +64,7 @@ export default function About() {
             <div className="flex justify-center md:justify-start">
               <button
                 onClick={() => scrollToSection('resume')}
-                className="inline-flex items-center px-6 py-3 bg-primary hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-300 shadow-md hover:shadow-lg"
+                className="px-6 py-3 bg-primary hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-300 shadow-md hover:shadow-lg"
               >
                 <span>Download Resume</span>
                 <i className="fas fa-download ml-2"></i>

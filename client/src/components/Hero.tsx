@@ -64,8 +64,22 @@ export default function Hero() {
             className={`order-1 md:order-2 flex justify-center transition-all duration-700 ${isImageVisible ? 'opacity-100' : 'opacity-0'}`}
           >
             <div className="relative w-64 h-64 sm:w-80 sm:h-80">
-              <div className="absolute inset-0 bg-primary bg-opacity-20 dark:bg-blue-500 dark:bg-opacity-20 rounded-full animate-pulse"></div>
-              <div className="absolute inset-4 rounded-full ring-4 ring-white dark:ring-gray-800 shadow-xl overflow-hidden">
+              {/* Background blob shape with animation */}
+              <div className="absolute inset-0 bg-primary bg-opacity-20 dark:bg-blue-500 dark:bg-opacity-20 animate-pulse" 
+                  style={{
+                    borderRadius: '60% 40% 70% 30% / 60% 30% 70% 40%',
+                    animation: 'morph 8s ease-in-out infinite'
+                  }}>
+              </div>
+              
+              {/* Image container with hexagon-like shape */}
+              <div 
+                className="absolute inset-4 ring-4 ring-white dark:ring-gray-800 shadow-xl overflow-hidden" 
+                style={{
+                  borderRadius: '55% 45% 65% 35% / 45% 65% 35% 55%',
+                  transform: 'rotate(5deg)'
+                }}
+              >
                 <img 
                   src="/images/Pic1.jpeg" 
                   alt="Deepiga's Profile"

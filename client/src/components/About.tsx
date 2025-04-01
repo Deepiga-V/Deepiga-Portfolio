@@ -22,8 +22,12 @@ export default function About() {
             ref={imageRef}
             className={`relative rounded-lg overflow-hidden shadow-lg transition-all duration-700 transform ${isImageVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
-            <div className="aspect-video bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
-              <i className="fas fa-laptop-code text-6xl text-gray-500 dark:text-gray-400"></i>
+            <div className="aspect-square bg-white dark:bg-gray-800 flex items-center justify-center p-4">
+              <img 
+                src="/images/DV logo (2).png" 
+                alt="DV Logo" 
+                className="max-w-full max-h-full object-contain"
+              />
             </div>
             <div className="absolute inset-0 bg-primary bg-opacity-20 dark:bg-blue-500 dark:bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
               <span className="text-white text-lg font-bold">Passionate About Technology</span>

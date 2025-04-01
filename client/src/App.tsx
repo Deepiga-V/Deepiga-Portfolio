@@ -18,7 +18,7 @@ import NotFound from "@/pages/not-found";
 
 function HomePage() {
   useEffect(() => {
-    document.title = "John Doe | Portfolio";
+    document.title = "Deepiga | Portfolio";
   }, []);
 
   return (

@@ -34,13 +34,13 @@ const educationItems: TimelineItem[] = [
     title: 'HSC',
     period: '2019-2020',
     organization: 'SBK Girls Higher Secondary School',
-    percentage: '77%'
+    percentage: 'Percentage: 77%'
   },
   {
     title: 'SSLC',
     period: '2017-2018',
     organization: 'Kongu Vellalar Matriculation Higher Secondary School',
-    percentage: '92%'
+    percentage: 'Percentage: 92%'
   }
 ];
 

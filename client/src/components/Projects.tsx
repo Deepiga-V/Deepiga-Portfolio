@@ -112,7 +112,7 @@ function ProjectCard({ project, index }: { project: Project, index: number }) {
       data-category={project.category}
     >
       <div className="bg-gray-50 dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
-        <div className="project-image h-56 overflow-hidden relative">
+        <div className="project-image aspect-square overflow-hidden relative">
           <img 
             src={project.imagePath} 
             alt={project.title}

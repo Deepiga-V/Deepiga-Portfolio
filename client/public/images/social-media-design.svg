@@ -1,0 +1,26 @@
+<svg width="400" height="225" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="225" fill="url(#grad4)" />
+  
+  <!-- Instagram post frame -->
+  <rect x="120" y="50" width="160" height="160" rx="2" fill="white" opacity="0.9"/>
+  
+  <!-- Header -->
+  <circle cx="140" cy="70" r="10" fill="#e0e0e0"/>
+  <rect x="155" y="65" width="80" height="10" rx="2" fill="#e0e0e0"/>
+  
+  <!-- Image area -->
+  <rect x="130" y="85" width="140" height="90" rx="2" fill="#f0f0f0"/>
+  
+  <!-- Likes and comments -->
+  <circle cx="140" cy="190" r="6" fill="#e0e0e0"/>
+  <circle cx="160" cy="190" r="6" fill="#e0e0e0"/>
+  <circle cx="180" cy="190" r="6" fill="#e0e0e0"/>
+  
+  <text x="200" y="40" font-family="Arial" font-size="16" text-anchor="middle" fill="white">Social Media Design</text>
+</svg>

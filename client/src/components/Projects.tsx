@@ -21,7 +21,7 @@ const projects: Project[] = [
     id: 1,
     title: 'Washie - Laundry Service App',
     category: 'App Designs',
-    imagePath: '/images/app-design.svg',
+    imagePath: '/images/1.png',
     technologies: ['Figma'],
     links: {
       live: 'https://www.behance.net/gallery/208991777/Washie-Laundry-Service-App'
@@ -31,7 +31,7 @@ const projects: Project[] = [
     id: 2,
     title: 'Plantora - Plant Shopping App',
     category: 'App Designs',
-    imagePath: '/images/app-design.svg',
+    imagePath: '/images/2.png',
     technologies: ['Figma'],
     links: {
       live: 'https://www.behance.net/gallery/214990791/Plantora-Plant-Shopping-App'
@@ -41,7 +41,7 @@ const projects: Project[] = [
     id: 3,
     title: 'Soul - Music Website',
     category: 'Web Designs',
-    imagePath: '/images/web-design.svg',
+    imagePath: '/images/3.png',
     technologies: ['Figma'],
     links: {
       live: 'https://www.behance.net/gallery/213455621/Soul-Music-Website'
@@ -51,7 +51,7 @@ const projects: Project[] = [
     id: 4,
     title: 'Furnique - Furniture Website',
     category: 'Web Designs',
-    imagePath: '/images/web-design.svg',
+    imagePath: '/images/4.png',
     technologies: ['Figma'],
     links: {
       live: 'https://www.behance.net/gallery/214210633/Furnique-Furniture-Website'
@@ -61,7 +61,7 @@ const projects: Project[] = [
     id: 5,
     title: 'Petal Palette - Flower Shop Website',
     category: 'Front-End Designs',
-    imagePath: '/images/frontend-design.svg',
+    imagePath: '/images/5.png',
     technologies: ['HTML','CSS'],
     links: {
       live: 'https://deepiga-v.github.io/Petal-Palette/'
@@ -71,7 +71,7 @@ const projects: Project[] = [
     id: 6,
     title: 'Café Aura - Coffee Shop Website',
     category: 'Front-End Designs',
-    imagePath: '/images/frontend-design.svg',
+    imagePath: '/images/6.png',
     technologies: ['HTML','CSS','JavaScript'],
     links: {
       live: 'https://deepiga-v.github.io/Cafe-Aura/'
@@ -81,7 +81,7 @@ const projects: Project[] = [
     id: 7,
     title: 'Instagram Post Designs',
     category: 'Social Media Designs',
-    imagePath: '/images/social-media-design.svg',
+    imagePath: '/images/7.png',
     technologies: ['Canva','Illustrator','Photoshop'],
     links: {
       live: 'https://www.fiverr.com/s/XLarR9Z'
@@ -91,7 +91,7 @@ const projects: Project[] = [
     id: 8,
     title: 'Instagram Story Designs',
     category: 'Social Media Designs',
-    imagePath: '/images/social-media-design.svg',
+    imagePath: '/images/8.png',
     technologies: ['Canva','Illustrator','Photoshop'],
     links: {
       live: 'https://www.fiverr.com/s/XLarR9Z'

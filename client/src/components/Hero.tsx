@@ -2,7 +2,7 @@ import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { useTypingEffect } from '@/hooks/use-typing-effect';
 import { scrollToSection } from '@/lib/utils';
 
-const roles = ['Software Engineer', 'UX Designer', 'Frontend Developer', 'Problem Solver'];
+const roles = ['UI/UX Designer', 'UX Designer', 'Web Designer'];
 
 export default function Hero() {
   const [containerRef, isVisible] = useIntersectionObserver<HTMLDivElement>();
@@ -18,7 +18,7 @@ export default function Hero() {
             className={`order-2 md:order-1 transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-              Hi, I'm <span className="text-primary dark:text-blue-400">John Doe</span>
+              Hi, I'm <span className="text-primary dark:text-blue-400">Deepiga</span>
             </h1>
             <h2 className="text-2xl sm:text-3xl text-gray-600 dark:text-gray-300 mb-6">
               <span className="typing-text">{typedText}</span>

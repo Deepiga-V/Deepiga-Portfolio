@@ -55,7 +55,7 @@ export default function Hero() {
                   <i className="fab fa-dribbble text-2xl"></i>
               </a>
                 <a href="mailto:email@deepigavelmurugan.com" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-blue-400 transition-colors duration-300">
-                  <i className="fab fa-envelope text-2xl"></i>
+                  <i className="fas fa-envelope text-2xl"></i>
                 </a>
             </div>
           </div>
@@ -66,9 +66,11 @@ export default function Hero() {
             <div className="relative w-64 h-64 sm:w-80 sm:h-80">
               <div className="absolute inset-0 bg-primary bg-opacity-20 dark:bg-blue-500 dark:bg-opacity-20 rounded-full animate-pulse"></div>
               <div className="absolute inset-4 rounded-full ring-4 ring-white dark:ring-gray-800 shadow-xl overflow-hidden">
-                <div className="w-full h-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400">
-                  <i className="fas fa-user text-6xl"></i>
-                </div>
+                <img 
+                  src="/images/Pic1.jpeg" 
+                  alt="Deepiga's Profile"
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
             </div>
           </div>

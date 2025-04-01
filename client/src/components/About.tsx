@@ -5,6 +5,7 @@ export default function About() {
   const [titleRef, isTitleVisible] = useIntersectionObserver<HTMLDivElement>();
   const [contentRef, isContentVisible] = useIntersectionObserver<HTMLDivElement>();
   const [imageRef, isImageVisible] = useIntersectionObserver<HTMLDivElement>();
+  const [socialRef, isSocialVisible] = useIntersectionObserver<HTMLDivElement>();
 
   return (
     <section id="about" className="py-16 md:py-24 bg-white dark:bg-gray-800 transition-colors duration-300">
@@ -27,20 +28,20 @@ export default function About() {
               <div 
                 className="absolute inset-0 bg-primary bg-opacity-20 dark:bg-blue-500 dark:bg-opacity-20 animate-pulse" 
                 style={{
-                  borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%',
+                  borderRadius: '60% 40% 70% 30% / 60% 30% 70% 40%',
                   animation: 'morph 8s ease-in-out infinite',
-                  animationDelay: '0.5s',
-                  transform: 'rotate(-5deg)'
+                  animationDelay: '0.5s'
                 }}
               >
               </div>
               
               {/* Logo container with blob shape */}
               <div 
-                className="absolute inset-2 shadow-lg overflow-hidden bg-white dark:bg-gray-700 flex items-center justify-center p-6" 
+                className="absolute inset-4 shadow-lg overflow-hidden bg-white dark:bg-gray-800 flex items-center justify-center p-6" 
                 style={{
-                  borderRadius: '45% 55% 65% 35% / 55% 45% 35% 65%',
-                  transform: 'rotate(2deg)'
+                  aspectRatio: '1 / 1',
+                  width: 'calc(100% - 32px)',
+                  height: 'calc(100% - 32px)'
                 }}
               >
                 <img 
@@ -70,6 +71,50 @@ export default function About() {
                 <span>Download Resume</span>
                 <i className="fas fa-download ml-2"></i>
               </button>
+            </div>
+            
+            <div 
+              ref={socialRef}
+              className={`flex space-x-6 mt-8 justify-center md:justify-start transition-all duration-700 transform ${isSocialVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+            >
+                <a 
+                  href="https://www.linkedin.com/in/deepiga-v-05a25524b" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  <i className="fab fa-linkedin text-lg"></i>
+                </a>
+                <a 
+                  href="https://github.com/Deepiga-V" 
+                  target="_blank"  
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  <i className="fab fa-github text-lg"></i>
+                </a>
+                <a 
+                  href="https://www.behance.net/deepiga" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  <i className="fab fa-behance text-lg"></i>
+                </a>
+                <a 
+                  href="https://dribbble.com/Deepiga" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  <i className="fab fa-dribbble text-lg"></i>
+                </a>
+                <a 
+                  href="mailto:email@deepigavelmurugan.com" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  <i className="fas fa-envelope text-lg"></i>
+                </a>
             </div>
           </div>
         </div>

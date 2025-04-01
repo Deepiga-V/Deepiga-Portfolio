@@ -41,21 +41,44 @@ export default function Hero() {
                 Contact Me
               </button>
             </div>
-            <div className="flex space-x-4 mt-8 justify-center md:justify-start">
-                <a href="https://www.linkedin.com/in/deepiga-v-05a25524b" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-blue-400 transition-colors duration-300">
-                  <i className="fab fa-linkedin text-2xl"></i>
-              </a>
-                <a href="https://github.com/Deepiga-V" target="_blank"  rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-blue-400 transition-colors duration-300">
-                  <i className="fab fa-github text-2xl"></i>
-              </a>
-                <a href="https://www.behance.net/deepiga" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-blue-400 transition-colors duration-300">
-                  <i className="fab fa-behance text-2xl"></i>
-              </a>
-                <a href="https://dribbble.com/Deepiga" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-blue-400 transition-colors duration-300">
-                  <i className="fab fa-dribbble text-2xl"></i>
-              </a>
-                <a href="mailto:email@deepigavelmurugan.com" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-blue-400 transition-colors duration-300">
-                  <i className="fas fa-envelope text-2xl"></i>
+            <div className="flex space-x-6 mt-8 justify-center md:justify-start">
+                <a 
+                  href="https://www.linkedin.com/in/deepiga-v-05a25524b" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  <i className="fab fa-linkedin text-lg"></i>
+                </a>
+                <a 
+                  href="https://github.com/Deepiga-V" 
+                  target="_blank"  
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  <i className="fab fa-github text-lg"></i>
+                </a>
+                <a 
+                  href="https://www.behance.net/deepiga" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  <i className="fab fa-behance text-lg"></i>
+                </a>
+                <a 
+                  href="https://dribbble.com/Deepiga" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  <i className="fab fa-dribbble text-lg"></i>
+                </a>
+                <a 
+                  href="mailto:email@deepigavelmurugan.com" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  <i className="fas fa-envelope text-lg"></i>
                 </a>
             </div>
           </div>
@@ -76,8 +99,9 @@ export default function Hero() {
               <div 
                 className="absolute inset-4 ring-4 ring-white dark:ring-gray-800 shadow-xl overflow-hidden" 
                 style={{
-                  borderRadius: '55% 45% 65% 35% / 45% 65% 35% 55%',
-                  transform: 'rotate(5deg)'
+                  aspectRatio: '1 / 1',
+                  width: 'calc(100% - 32px)',
+                  height: 'calc(100% - 32px)'
                 }}
               >
                 <img 

@@ -1,0 +1,206 @@
+import { useState } from 'react';
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
+
+type ProjectCategory = 'All' | 'Web App' | 'Mobile' | 'UI/UX';
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  category: ProjectCategory;
+  technologies: string[];
+  links: {
+    live?: string;
+    github?: string;
+  };
+}
+
+const projects: Project[] = [
+  {
+    id: 1,
+    title: 'E-commerce Platform',
+    description: 'A full-featured online shopping platform with payment processing, user accounts, and inventory management.',
+    category: 'Web App',
+    technologies: ['React', 'Node.js', 'Redux', 'MongoDB'],
+    links: {
+      github: 'https://github.com',
+      live: 'https://example.com'
+    }
+  },
+  {
+    id: 2,
+    title: 'Fitness Tracker App',
+    description: 'A mobile app for tracking workouts, nutrition, and fitness goals with customizable plans and analytics.',
+    category: 'Mobile',
+    technologies: ['React Native', 'Firebase', 'TypeScript'],
+    links: {
+      github: 'https://github.com',
+      live: 'https://example.com'
+    }
+  },
+  {
+    id: 3,
+    title: 'Dashboard Redesign',
+    description: 'A complete UI/UX overhaul for a complex analytics dashboard, focusing on usability and data visualization.',
+    category: 'UI/UX',
+    technologies: ['Figma', 'Sketch', 'D3.js'],
+    links: {
+      github: 'https://github.com',
+      live: 'https://example.com'
+    }
+  }
+];
+
+const categories: ProjectCategory[] = ['All', 'Web App', 'Mobile', 'UI/UX'];
+
+function ProjectCard({ project, index }: { project: Project, index: number }) {
+  const [ref, isVisible] = useIntersectionObserver<HTMLDivElement>();
+  
+  return (
+    <div 
+      ref={ref}
+      className={`project-card transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      style={{ transitionDelay: `${index * 100}ms` }}
+      data-category={project.category}
+    >
+      <div className="bg-gray-50 dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+        <div className="project-image h-56 overflow-hidden relative">
+          <div className="w-full h-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+            <i className="fas fa-laptop text-4xl text-gray-500 dark:text-gray-400"></i>
+          </div>
+          <div className="absolute inset-0 bg-primary bg-opacity-70 dark:bg-blue-500 dark:bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <div className="flex space-x-4">
+              {project.links.live && (
+                <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-100 p-2 rounded-full bg-black bg-opacity-30 transition-colors duration-300">
+                  <i className="fas fa-link"></i>
+                </a>
+              )}
+              {project.links.github && (
+                <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-100 p-2 rounded-full bg-black bg-opacity-30 transition-colors duration-300">
+                  <i className="fab fa-github"></i>
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+        <div className="p-6">
+          <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">{project.title}</h3>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.technologies.map((tech) => {
+              let bgClass = '';
+              let textClass = '';
+              
+              switch (tech.toLowerCase()) {
+                case 'react':
+                case 'react native':
+                  bgClass = 'bg-blue-100 dark:bg-blue-900';
+                  textClass = 'text-blue-600 dark:text-blue-300';
+                  break;
+                case 'node.js':
+                case 'firebase':
+                  bgClass = 'bg-green-100 dark:bg-green-900';
+                  textClass = 'text-green-600 dark:text-green-300';
+                  break;
+                case 'redux':
+                case 'figma':
+                  bgClass = 'bg-purple-100 dark:bg-purple-900';
+                  textClass = 'text-purple-600 dark:text-purple-300';
+                  break;
+                case 'mongodb':
+                case 'typescript':
+                  bgClass = 'bg-yellow-100 dark:bg-yellow-900';
+                  textClass = 'text-yellow-600 dark:text-yellow-300';
+                  break;
+                case 'sketch':
+                  bgClass = 'bg-pink-100 dark:bg-pink-900';
+                  textClass = 'text-pink-600 dark:text-pink-300';
+                  break;
+                case 'd3.js':
+                  bgClass = 'bg-indigo-100 dark:bg-indigo-900';
+                  textClass = 'text-indigo-600 dark:text-indigo-300';
+                  break;
+                default:
+                  bgClass = 'bg-gray-100 dark:bg-gray-800';
+                  textClass = 'text-gray-600 dark:text-gray-300';
+              }
+              
+              return (
+                <span key={tech} className={`tech-pill px-3 py-1 text-xs font-medium ${bgClass} ${textClass} rounded-full`}>
+                  {tech}
+                </span>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Projects() {
+  const [activeCategory, setActiveCategory] = useState<ProjectCategory>('All');
+  const [titleRef, isTitleVisible] = useIntersectionObserver<HTMLDivElement>();
+  const [filterRef, isFilterVisible] = useIntersectionObserver<HTMLDivElement>();
+  const [buttonRef, isButtonVisible] = useIntersectionObserver<HTMLDivElement>();
+  
+  const filteredProjects = activeCategory === 'All' 
+    ? projects 
+    : projects.filter(project => project.category === activeCategory);
+  
+  return (
+    <section id="projects" className="py-16 md:py-24 bg-white dark:bg-gray-800 transition-colors duration-300">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div 
+          ref={titleRef}
+          className={`text-center mb-16 transition-all duration-700 transform ${isTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
+          <div className="w-20 h-1 bg-primary dark:bg-blue-400 mx-auto"></div>
+          <p className="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+            Here's a selection of projects I've worked on. Each one presented unique challenges and learning opportunities.
+          </p>
+        </div>
+        
+        <div 
+          ref={filterRef}
+          className={`project-filter mb-12 flex flex-wrap justify-center gap-4 transition-all duration-700 transform ${isFilterVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        >
+          {categories.map((category) => (
+            <button 
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`filter-btn px-5 py-2 rounded-full transition-colors duration-300 
+                ${activeCategory === category 
+                  ? 'bg-primary text-white dark:bg-blue-400 dark:text-gray-900' 
+                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900'}`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
+        
+        <div 
+          ref={buttonRef}
+          className={`text-center mt-12 transition-all duration-700 transform ${isButtonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        >
+          <a 
+            href="https://github.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-primary hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 text-gray-700 dark:text-gray-300 font-medium rounded-md transition-colors duration-300"
+          >
+            <span>View All Projects</span>
+            <i className="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}

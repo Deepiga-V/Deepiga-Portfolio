@@ -18,7 +18,7 @@ export default function Hero() {
             className={`order-2 md:order-1 text-center md:text-left transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-              Hi, I'm <span className="text-primary dark:text-blue-400">Deepiga</span>
+              Hi, I'm <span className="text-primary dark:text-teal-500">Deepiga</span>
             </h1>
             <h2 className="text-2xl sm:text-3xl text-gray-600 dark:text-gray-300 mb-6">
               <span className="typing-text">{typedText}</span>
@@ -35,7 +35,7 @@ export default function Hero() {
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-gray-900 font-medium rounded-md transition-all duration-300"
+                className="px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-teal-500 dark:text-teal-500 dark:hover:bg-teal-500 dark:hover:text-gray-900 font-medium rounded-md transition-all duration-300"
               >
                 Contact Me
               </button>

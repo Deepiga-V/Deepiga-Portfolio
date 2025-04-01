@@ -60,14 +60,14 @@ export default function Header() {
           >
             <span className="text-2xl">DEEPIGA</span>
           </a>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map(({ href, label }) => (
               <a 
                 key={href}
                 href={`#${href}`}
-                className="nav-link text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-blue-400 font-medium transition-colors duration-300"
+                className="nav-link text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-teal-500 font-medium transition-colors duration-300"
                 onClick={(e) => {
                   e.preventDefault();
                   handleNavClick(href);
@@ -83,18 +83,18 @@ export default function Header() {
                 console.log('Dark mode toggle clicked (desktop)');
                 toggleDarkMode();
               }} 
-              className="p-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300" 
+              className="p-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-teal-500 transition-colors duration-300" 
               aria-label="Toggle dark mode"
               data-testid="dark-mode-toggle-desktop"
             >
               {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
           </nav>
-          
+
           {/* Mobile Menu Button */}
           <button 
             onClick={toggleMenu}
-            className="md:hidden p-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors duration-300" 
+            className="md:hidden p-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-teal-500 transition-colors duration-300" 
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
@@ -104,7 +104,7 @@ export default function Header() {
           </button>
         </div>
       </div>
-      
+
       {/* Mobile Navigation */}
       <div 
         id="mobile-menu"
@@ -118,7 +118,7 @@ export default function Header() {
             <a 
               key={href}
               href={`#${href}`}
-              className="mobile-nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 font-medium py-2 transition-colors duration-300"
+              className="mobile-nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-teal-500 font-medium py-2 transition-colors duration-300"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick(href);
@@ -136,7 +136,7 @@ export default function Header() {
                 console.log('Dark mode toggle clicked (mobile)');
                 toggleDarkMode();
               }}
-              className="p-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300" 
+              className="p-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-teal-500 transition-colors duration-300" 
               aria-label="Toggle dark mode"
               data-testid="dark-mode-toggle-mobile"
             >

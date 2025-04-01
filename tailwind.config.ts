@@ -61,6 +61,19 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        teal: {
+          DEFAULT: "#0A7273",
+          50: "#E6F3F3",
+          100: "#CCE7E7",
+          200: "#99CFCF",
+          300: "#66B7B7",
+          400: "#339F9F",
+          500: "#0A7273",
+          600: "#085B5C",
+          700: "#064445",
+          800: "#042D2E",
+          900: "#021617"
+        },
       },
       keyframes: {
         "accordion-down": {

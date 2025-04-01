@@ -15,7 +15,7 @@ export default function About() {
           className={`text-center mb-16 transition-all duration-700 transform ${isTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-          <div className="w-20 h-1 bg-primary dark:bg-blue-400 mx-auto"></div>
+          <div className="w-20 h-1 bg-primary dark:bg-teal-500 mx-auto"></div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center justify-items-center">
@@ -117,7 +117,7 @@ export default function About() {
                 <a 
                   href="mailto:email@deepigavelmurugan.com" 
                   rel="noopener noreferrer" 
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-teal-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   <i className="fas fa-envelope text-lg"></i>
                 </a>

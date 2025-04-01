@@ -56,7 +56,7 @@ function SkillSection({ title, icon, skills }: { title: string, icon: string, sk
       className={`bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
     >
       <div className="flex items-center mb-4">
-        <i className={`${icon} text-primary dark:text-blue-400 text-3xl mr-4`}></i>
+        <i className={`${icon} text-primary dark:text-teal-400 text-3xl mr-4`}></i>
         <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">{title}</h3>
       </div>
       <div className="space-y-4">
@@ -80,7 +80,7 @@ export default function Skills() {
           className={`text-center mb-16 transition-all duration-700 transform ${isTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>
-          <div className="w-20 h-1 bg-primary dark:bg-blue-400 mx-auto"></div>
+          <div className="w-20 h-1 bg-primary dark:bg-teal-400 mx-auto"></div>
           <p className="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
             I've worked with a variety of technologies throughout my career. Here's a snapshot of my technical capabilities.
           </p>

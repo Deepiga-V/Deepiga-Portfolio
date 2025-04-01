@@ -115,10 +115,10 @@ function ProjectCard({ project, index }: { project: Project, index: number }) {
         <div className="project-image aspect-square overflow-hidden relative">
           <img 
             src={project.imagePath} 
-            alt={project.title}
+            100t={project.title}
             className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
           />
-          <div className="absolute inset-0 bg-primary bg-opacity-70 dark:bg-blue-500 dark:bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute inset-0 bg-primary bg-opacity-70 dark:bg-teal-500 dark:bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
             <div className="flex space-x-4">
               {project.links.live && (
                 <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-100 p-2 rounded-full bg-black bg-opacity-30 transition-colors duration-300">

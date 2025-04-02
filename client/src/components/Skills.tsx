@@ -36,7 +36,7 @@ function SkillBar({ skill, delay }: { skill: Skill, delay: number }) {
       </div>
       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
         <div 
-          className="bg-primary dark:bg-blue-400 h-2 rounded-full transition-all duration-1000 ease-out"
+          className="bg-primary dark:bg-teal-500 h-2 rounded-full transition-all duration-1000 ease-out"
           style={{ 
             width: isVisible ? `${skill.percentage}%` : '0%', 
             transitionDelay: `${delay * 100}ms` 
@@ -87,7 +87,7 @@ export default function Skills() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <SkillSection title="Methods" icon="fas fa-" skills={methods} />
+          <SkillSection title="Methods" icon="fas fa-bezier-curve" skills={methods} />
           <SkillSection title="Tools" icon="fas fa-tools" skills={tools} />
           <SkillSection title="Technicals" icon="fas fa-code" skills={technicals} />
         </div>

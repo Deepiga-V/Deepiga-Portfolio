@@ -20,8 +20,8 @@ export default function Hero() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
               Hi, I'm <span className="text-primary dark:text-teal-400">Deepiga</span>
             </h1>
-            <h2 className="text-2xl sm:text-3xl text-gray-600 dark:text-gray-300 mb-6">
-              <span className="typing-text">{typedText}</span>
+            <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-4">
+              I'm a <span className="typing-text text-primary dark:text-teal-400">{typedText}</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">
               A designer fueled by curiosity and creativity, crafting digital experiences that are as intuitive as they are visually captivating. With a tech-savvy foundation in computer science, constantly exploring new horizons and merge innovation with elegance in every design I create.
@@ -37,7 +37,7 @@ export default function Hero() {
                 onClick={() => scrollToSection('contact')}
                 className="px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-teal-500 dark:text-teal-400 dark:hover:bg-teal-400 dark:hover:text-gray-900 font-medium rounded-md transition-all duration-300"
               >
-                Say Hello 
+                Say Hello 👋
               </button>
             </div>
             <div className="flex space-x-6 mt-8 justify-center md:justify-start">

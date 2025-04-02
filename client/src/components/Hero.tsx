@@ -18,7 +18,7 @@ export default function Hero() {
             className={`order-2 md:order-1 text-center md:text-left transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-              Hi, I'm <span className="text-primary dark:text-teal-500">Deepiga</span>
+              Hi, I'm <span className="text-primary dark:text-teal-400">Deepiga</span>
             </h1>
             <h2 className="text-2xl sm:text-3xl text-gray-600 dark:text-gray-300 mb-6">
               <span className="typing-text">{typedText}</span>
@@ -29,15 +29,15 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <button
                 onClick={() => scrollToSection('projects')}
-                className="px-6 py-3 bg-primary hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-300 shadow-md hover:shadow-lg"
+                className="px-6 py-3 bg-primary hover:bg-teal-400 text-white font-medium rounded-md transition-colors duration-300 shadow-md hover:shadow-lg"
               >
-                View My Work
+                View My Works
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-teal-500 dark:text-teal-500 dark:hover:bg-teal-500 dark:hover:text-gray-900 font-medium rounded-md transition-all duration-300"
+                className="px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-teal-500 dark:text-teal-400 dark:hover:bg-teal-400 dark:hover:text-gray-900 font-medium rounded-md transition-all duration-300"
               >
-                Contact Me
+                Say Hello 
               </button>
             </div>
             <div className="flex space-x-6 mt-8 justify-center md:justify-start">
@@ -45,7 +45,7 @@ export default function Hero() {
                   href="https://www.linkedin.com/in/deepiga-v-05a25524b" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-300 hover:bg-primary dark:bg-gray-700 dark:hover:bg-teal-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   <i className="fab fa-linkedin text-lg"></i>
                 </a>
@@ -53,7 +53,7 @@ export default function Hero() {
                   href="https://github.com/Deepiga-V" 
                   target="_blank"  
                   rel="noopener noreferrer" 
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-300 hover:bg-primary dark:bg-gray-700 dark:hover:bg-teal-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   <i className="fab fa-github text-lg"></i>
                 </a>
@@ -61,21 +61,21 @@ export default function Hero() {
                   href="https://www.behance.net/deepiga" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-300 hover:bg-primary dark:bg-gray-700 dark:hover:bg-teal-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   <i className="fab fa-behance text-lg"></i>
                 </a>
                 <a 
                   href="https://dribbble.com/Deepiga" 
                   rel="noopener noreferrer" 
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-300 hover:bg-primary dark:bg-gray-700 dark:hover:bg-teal-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   <i className="fab fa-dribbble text-lg"></i>
                 </a>
                 <a 
                   href="mailto:email@deepigavelmurugan.com" 
                   rel="noopener noreferrer" 
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 hover:bg-primary dark:bg-gray-700 dark:hover:bg-blue-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-300 hover:bg-primary dark:bg-gray-700 dark:hover:bg-teal-500 text-gray-600 hover:text-white dark:text-gray-300 dark:hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   <i className="fas fa-envelope text-lg"></i>
                 </a>
@@ -87,7 +87,7 @@ export default function Hero() {
           >
             <div className="relative w-64 h-64 sm:w-80 sm:h-80">
               {/* Background blob shape with animation */}
-              <div className="absolute bg-primary bg-opacity-20 dark:bg-blue-500 dark:bg-opacity-20 animate-pulse" 
+              <div className="absolute bg-primary bg-opacity-20 dark:bg-teal-300 dark:bg-opacity-20 animate-pulse" 
                   style={{
                     top: '-10%',
                     left: '-10%',

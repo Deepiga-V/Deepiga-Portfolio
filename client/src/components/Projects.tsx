@@ -118,7 +118,7 @@ function ProjectCard({ project, index }: { project: Project, index: number }) {
             alt={project.title}
             className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
           />
-          <div className="absolute inset-0 bg-primary bg-opacity-70 dark:bg-teal-500 dark:bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute inset-0 bg-primary bg-opacity-70 dark:bg-teal-500 dark:bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-60 transition-opacity duration-300">
             <div className="flex space-x-4">
               {project.links.live && (
                 <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-100 p-2 rounded-full bg-black bg-opacity-30 transition-colors duration-300">
@@ -205,7 +205,7 @@ export default function Projects() {
           className={`text-center mb-16 transition-all duration-700 transform ${isTitleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
-          <div className="w-20 h-1 bg-primary dark:bg-blue-400 mx-auto"></div>
+          <div className="w-20 h-1 bg-primary dark:bg-teal-400 mx-auto"></div>
           <p className="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
             Here's a selection of projects I've worked on. Each one presented unique challenges and learning opportunities.
           </p>
@@ -221,8 +221,8 @@ export default function Projects() {
               onClick={() => setActiveCategory(category)}
               className={`filter-btn px-5 py-2 rounded-full transition-colors duration-300 
                 ${activeCategory === category 
-                  ? 'bg-primary text-white dark:bg-blue-400 dark:text-gray-900' 
-                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900'}`}
+                  ? 'bg-primary text-white dark:bg-teal-400 dark:text-gray-900' 
+                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white dark:hover:bg-teal-400 dark:hover:text-gray-900'}`}
             >
               {category}
             </button>

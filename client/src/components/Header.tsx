@@ -16,21 +16,19 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
-  // Completely separate the mobile menu toggle from dark mode toggle
-  const toggleMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault(); // Prevent default behavior
-    e.stopPropagation(); // Prevent event bubbling
-    console.log('Toggle menu clicked'); // Debug log
-    setIsMenuOpen(prevState => {
-      const newState = !prevState;
-      console.log('Menu state changing to:', newState); // Debug log
-      return newState;
-    });
+  const toggleMenu = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsMenuOpen((prevState) => !prevState);
   };
 
-  const handleNavClick = (id: string) => {
-    scrollToSection(id);
-    setIsMenuOpen(false);
+  const handleNavClick = (id) => {
+    if (id === 'resume') {
+      window.open('client/public/images/Deepigauiux-resume.pdf', '_blank');
+    } else {
+      scrollToSection(id);
+      setIsMenuOpen(false);
+    }
   };
 
   useEffect(() => {
@@ -49,10 +47,9 @@ export default function Header() {
     )}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo */}
           <a 
             href="#home" 
-            className="text-xl font-bold text-primary dark:text-blue-400 flex items-center gap-2 transition-colors duration-300"
+            className="text-xl font-bold text-primary dark:text-teal-400 flex items-center gap-2 transition-colors duration-300"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick('home');
@@ -61,7 +58,6 @@ export default function Header() {
             <span className="text-2xl">DEEPIGA</span>
           </a>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map(({ href, label }) => (
               <a 
@@ -80,32 +76,25 @@ export default function Header() {
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                console.log('Dark mode toggle clicked (desktop)');
                 toggleDarkMode();
               }} 
               className="p-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-teal-500 transition-colors duration-300" 
               aria-label="Toggle dark mode"
-              data-testid="dark-mode-toggle-desktop"
             >
               {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
           </nav>
 
-          {/* Mobile Menu Button */}
           <button 
             onClick={toggleMenu}
             className="md:hidden p-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-teal-500 transition-colors duration-300" 
             aria-label="Toggle menu"
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-menu"
-            data-testid="mobile-menu-button"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <div 
         id="mobile-menu"
         className={cn(
@@ -133,12 +122,10 @@ export default function Header() {
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                console.log('Dark mode toggle clicked (mobile)');
                 toggleDarkMode();
               }}
               className="p-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-teal-500 transition-colors duration-300" 
               aria-label="Toggle dark mode"
-              data-testid="dark-mode-toggle-mobile"
             >
               {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>

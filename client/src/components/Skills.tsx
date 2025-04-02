@@ -36,7 +36,7 @@ function SkillBar({ skill, delay }: { skill: Skill, delay: number }) {
       </div>
       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
         <div 
-          className="bg-primary dark:bg-teal-500 h-2 rounded-full transition-all duration-1000 ease-out"
+          className="bg-primary dark:bg-teal-400 h-2 rounded-full transition-all duration-1000 ease-out"
           style={{ 
             width: isVisible ? `${skill.percentage}%` : '0%', 
             transitionDelay: `${delay * 100}ms` 

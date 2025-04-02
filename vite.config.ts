@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export default defineConfig({
-  base: "/VDeepiga-Portfolio/", // 🔥 Add this line (replace with your actual repo name)
+  base: "/Deepiga-Portfolio/", // 🔥 Add this line (replace with your actual repo name)
   plugins: [
     react(),
     runtimeErrorOverlay(),

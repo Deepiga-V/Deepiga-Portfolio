@@ -51,7 +51,7 @@ export default function About() {
                     }}
                   >
                 <img 
-                  src="client/public/images/DV logo (2).png" 
+                  src="/images/DV logo (2).png" 
                   alt="DV Logo" 
                   className="w-4/5 h-4/5 object-contain"
                 />
@@ -71,13 +71,15 @@ export default function About() {
     
             
             <div className="flex justify-center md:justify-start">
-              <button
-                onClick={() => scrollToSection('resume')}
-                className="px-6 py-3 bg-primary hover:bg-teal-400 text-white font-medium rounded-md transition-colors duration-300 shadow-md hover:shadow-lg"
+              <a
+                href="/images/Deepigauiux-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-primary hover:bg-teal-400 text-white font-medium rounded-md transition-colors duration-300 shadow-md hover:shadow-lg inline-flex items-center"
               >
                 <span>Download Resume</span>
                 <i className="fas fa-download ml-2"></i>
-              </button>
+              </a>
             </div>
             
             <div 

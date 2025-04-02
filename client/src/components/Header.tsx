@@ -24,7 +24,7 @@ export default function Header() {
 
   const handleNavClick = (id) => {
     if (id === 'resume') {
-      window.open('client/public/images/Deepigauiux-resume.pdf', '_blank');
+      window.open('/images/Deepigauiux-resume.pdf', '_blank');
     } else {
       scrollToSection(id);
       setIsMenuOpen(false);
